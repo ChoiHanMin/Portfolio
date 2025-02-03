@@ -1,0 +1,286 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Unity\\TestProject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4CE07701-134F-9DD0-F36C-F385BB4D61DF}|Assembly-CSharp.csproj|e:\\unity\\testproject\\assets\\script\\gamescene\\monsterfsm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4CE07701-134F-9DD0-F36C-F385BB4D61DF}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\gamescene\\monsterfsm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4CE07701-134F-9DD0-F36C-F385BB4D61DF}|Assembly-CSharp.csproj|e:\\unity\\testproject\\assets\\script\\gamescene\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4CE07701-134F-9DD0-F36C-F385BB4D61DF}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\gamescene\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4CE07701-134F-9DD0-F36C-F385BB4D61DF}|Assembly-CSharp.csproj|e:\\unity\\testproject\\assets\\script\\gamescene\\guardianobj.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4CE07701-134F-9DD0-F36C-F385BB4D61DF}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\gamescene\\guardianobj.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4CE07701-134F-9DD0-F36C-F385BB4D61DF}|Assembly-CSharp.csproj|E:\\Unity\\TestProject\\assets\\script\\mainscene\\mainmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4CE07701-134F-9DD0-F36C-F385BB4D61DF}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\mainscene\\mainmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4CE07701-134F-9DD0-F36C-F385BB4D61DF}|Assembly-CSharp.csproj|E:\\Unity\\TestProject\\assets\\script\\gamescene\\dashbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4CE07701-134F-9DD0-F36C-F385BB4D61DF}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\gamescene\\dashbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4CE07701-134F-9DD0-F36C-F385BB4D61DF}|Assembly-CSharp.csproj|E:\\Unity\\TestProject\\assets\\script\\util\\soundmng.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4CE07701-134F-9DD0-F36C-F385BB4D61DF}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\util\\soundmng.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4CE07701-134F-9DD0-F36C-F385BB4D61DF}|Assembly-CSharp.csproj|E:\\Unity\\TestProject\\assets\\script\\gamescene\\camerafollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4CE07701-134F-9DD0-F36C-F385BB4D61DF}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\gamescene\\camerafollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4CE07701-134F-9DD0-F36C-F385BB4D61DF}|Assembly-CSharp.csproj|E:\\Unity\\TestProject\\assets\\script\\util\\loadingscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4CE07701-134F-9DD0-F36C-F385BB4D61DF}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\util\\loadingscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4CE07701-134F-9DD0-F36C-F385BB4D61DF}|Assembly-CSharp.csproj|E:\\Unity\\TestProject\\assets\\script\\test\\sceneload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4CE07701-134F-9DD0-F36C-F385BB4D61DF}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\test\\sceneload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4CE07701-134F-9DD0-F36C-F385BB4D61DF}|Assembly-CSharp.csproj|E:\\Unity\\TestProject\\assets\\script\\gamescene\\monsterauthoring.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4CE07701-134F-9DD0-F36C-F385BB4D61DF}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\gamescene\\monsterauthoring.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4CE07701-134F-9DD0-F36C-F385BB4D61DF}|Assembly-CSharp.csproj|E:\\Unity\\TestProject\\assets\\script\\gamescene\\monsterspawnsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4CE07701-134F-9DD0-F36C-F385BB4D61DF}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\gamescene\\monsterspawnsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4CE07701-134F-9DD0-F36C-F385BB4D61DF}|Assembly-CSharp.csproj|E:\\Unity\\TestProject\\assets\\script\\gamescene\\characterscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4CE07701-134F-9DD0-F36C-F385BB4D61DF}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\gamescene\\characterscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4CE07701-134F-9DD0-F36C-F385BB4D61DF}|Assembly-CSharp.csproj|E:\\Unity\\TestProject\\assets\\script\\gamescene\\charactermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4CE07701-134F-9DD0-F36C-F385BB4D61DF}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\gamescene\\charactermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4CE07701-134F-9DD0-F36C-F385BB4D61DF}|Assembly-CSharp.csproj|E:\\Unity\\TestProject\\assets\\script\\gamescene\\joystick.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4CE07701-134F-9DD0-F36C-F385BB4D61DF}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\gamescene\\joystick.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4CE07701-134F-9DD0-F36C-F385BB4D61DF}|Assembly-CSharp.csproj|E:\\Unity\\TestProject\\assets\\script\\gamescene\\comboattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4CE07701-134F-9DD0-F36C-F385BB4D61DF}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\gamescene\\comboattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08040F8A-BE5E-F84B-7CE2-9F08EB1167BF}|Assembly-CSharp-Editor.csproj|E:\\Unity\\TestProject\\assets\\editor\\testscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08040F8A-BE5E-F84B-7CE2-9F08EB1167BF}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\editor\\testscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 229,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GuardianObj.cs",
+              "DocumentMoniker": "E:\\Unity\\TestProject\\Assets\\Script\\GameScene\\GuardianObj.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\GameScene\\GuardianObj.cs",
+              "ToolTip": "E:\\Unity\\TestProject\\Assets\\Script\\GameScene\\GuardianObj.cs",
+              "RelativeToolTip": "Assets\\Script\\GameScene\\GuardianObj.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T11:51:49.814Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DashButton.cs",
+              "DocumentMoniker": "E:\\Unity\\TestProject\\Assets\\Script\\GameScene\\DashButton.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\GameScene\\DashButton.cs",
+              "ToolTip": "E:\\Unity\\TestProject\\Assets\\Script\\GameScene\\DashButton.cs",
+              "RelativeToolTip": "Assets\\Script\\GameScene\\DashButton.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-31T07:16:44.412Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "E:\\Unity\\TestProject\\Assets\\Script\\GameScene\\GameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\GameScene\\GameManager.cs",
+              "ToolTip": "E:\\Unity\\TestProject\\Assets\\Script\\GameScene\\GameManager.cs",
+              "RelativeToolTip": "Assets\\Script\\GameScene\\GameManager.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAwCIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T17:41:07.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SoundMng.cs",
+              "DocumentMoniker": "E:\\Unity\\TestProject\\Assets\\Script\\Util\\SoundMng.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Util\\SoundMng.cs",
+              "ToolTip": "E:\\Unity\\TestProject\\Assets\\Script\\Util\\SoundMng.cs",
+              "RelativeToolTip": "Assets\\Script\\Util\\SoundMng.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwCkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-02T22:26:16.242Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CameraFollow.cs",
+              "DocumentMoniker": "E:\\Unity\\TestProject\\Assets\\Script\\GameScene\\CameraFollow.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\GameScene\\CameraFollow.cs",
+              "ToolTip": "E:\\Unity\\TestProject\\Assets\\Script\\GameScene\\CameraFollow.cs",
+              "RelativeToolTip": "Assets\\Script\\GameScene\\CameraFollow.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T01:59:27.699Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LoadingScript.cs",
+              "DocumentMoniker": "E:\\Unity\\TestProject\\Assets\\Script\\Util\\LoadingScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Util\\LoadingScript.cs",
+              "ToolTip": "E:\\Unity\\TestProject\\Assets\\Script\\Util\\LoadingScript.cs",
+              "RelativeToolTip": "Assets\\Script\\Util\\LoadingScript.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T17:05:10.002Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MonsterAuthoring.cs",
+              "DocumentMoniker": "E:\\Unity\\TestProject\\Assets\\Script\\GameScene\\MonsterAuthoring.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\GameScene\\MonsterAuthoring.cs",
+              "ToolTip": "E:\\Unity\\TestProject\\Assets\\Script\\GameScene\\MonsterAuthoring.cs",
+              "RelativeToolTip": "Assets\\Script\\GameScene\\MonsterAuthoring.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-02T23:35:57.271Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "TestScript.cs",
+              "DocumentMoniker": "E:\\Unity\\TestProject\\Assets\\Editor\\TestScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Editor\\TestScript.cs",
+              "ToolTip": "E:\\Unity\\TestProject\\Assets\\Editor\\TestScript.cs",
+              "RelativeToolTip": "Assets\\Editor\\TestScript.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T10:06:56.354Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 171,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MonsterFSM.cs",
+              "DocumentMoniker": "E:\\Unity\\TestProject\\Assets\\Script\\GameScene\\MonsterFSM.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\GameScene\\MonsterFSM.cs",
+              "ToolTip": "E:\\Unity\\TestProject\\Assets\\Script\\GameScene\\MonsterFSM.cs",
+              "RelativeToolTip": "Assets\\Script\\GameScene\\MonsterFSM.cs",
+              "ViewState": "AgIAAC8BAAAAAAAAAAAMwEMBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-02T15:55:30.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CharacterMovement.cs",
+              "DocumentMoniker": "E:\\Unity\\TestProject\\Assets\\Script\\GameScene\\CharacterMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\GameScene\\CharacterMovement.cs",
+              "ToolTip": "E:\\Unity\\TestProject\\Assets\\Script\\GameScene\\CharacterMovement.cs",
+              "RelativeToolTip": "Assets\\Script\\GameScene\\CharacterMovement.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAABwAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-02T18:47:10.958Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ComboAttack.cs",
+              "DocumentMoniker": "E:\\Unity\\TestProject\\Assets\\Script\\GameScene\\ComboAttack.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\GameScene\\ComboAttack.cs",
+              "ToolTip": "E:\\Unity\\TestProject\\Assets\\Script\\GameScene\\ComboAttack.cs",
+              "RelativeToolTip": "Assets\\Script\\GameScene\\ComboAttack.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-31T15:26:08.241Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainManager.cs",
+              "DocumentMoniker": "E:\\Unity\\TestProject\\Assets\\Script\\MainScene\\MainManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\MainScene\\MainManager.cs",
+              "ToolTip": "E:\\Unity\\TestProject\\Assets\\Script\\MainScene\\MainManager.cs",
+              "RelativeToolTip": "Assets\\Script\\MainScene\\MainManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T17:48:01.045Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MonsterSpawnSystem.cs",
+              "DocumentMoniker": "E:\\Unity\\TestProject\\Assets\\Script\\GameScene\\MonsterSpawnSystem.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\GameScene\\MonsterSpawnSystem.cs",
+              "ToolTip": "E:\\Unity\\TestProject\\Assets\\Script\\GameScene\\MonsterSpawnSystem.cs",
+              "RelativeToolTip": "Assets\\Script\\GameScene\\MonsterSpawnSystem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-02T23:12:52.528Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SceneLoad.cs",
+              "DocumentMoniker": "E:\\Unity\\TestProject\\Assets\\Script\\Test\\SceneLoad.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Test\\SceneLoad.cs",
+              "ToolTip": "E:\\Unity\\TestProject\\Assets\\Script\\Test\\SceneLoad.cs",
+              "RelativeToolTip": "Assets\\Script\\Test\\SceneLoad.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T03:19:45.558Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CharacterScript.cs",
+              "DocumentMoniker": "E:\\Unity\\TestProject\\Assets\\Script\\GameScene\\CharacterScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\GameScene\\CharacterScript.cs",
+              "ToolTip": "E:\\Unity\\TestProject\\Assets\\Script\\GameScene\\CharacterScript.cs",
+              "RelativeToolTip": "Assets\\Script\\GameScene\\CharacterScript.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAowGEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T16:14:45.63Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "JoyStick.cs",
+              "DocumentMoniker": "E:\\Unity\\TestProject\\Assets\\Script\\GameScene\\JoyStick.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\GameScene\\JoyStick.cs",
+              "ToolTip": "E:\\Unity\\TestProject\\Assets\\Script\\GameScene\\JoyStick.cs",
+              "RelativeToolTip": "Assets\\Script\\GameScene\\JoyStick.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwAYAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T18:59:34.624Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
