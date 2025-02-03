@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour, IPauseable
     public GameObject MonsterObj;
     public GameObject BossMonsterObj;
     private int monsterSpawned;
-    int TotalStage = 1;
+    int TotalStage = 2;
     int CurrentStage = 0;
 
     [SerializeField,Space] Button DashButton;
@@ -92,18 +92,18 @@ public class GameManager : MonoBehaviour, IPauseable
         if (isPaused)
             return;
 
-        if (monsterSpawned <= 0 && CurrentStage <= TotalStage)
+        if (monsterSpawned <= 0 && CurrentStage < TotalStage)
         {
-            if (CurrentStage <= TotalStage)
+            Debug.Log("CurrentStage = " + CurrentStage);
+            if (CurrentStage < TotalStage)
             {
                 StartCoroutine(StartGame());
             }
             CurrentStage++;
         }
 
-        if(CurrentStage > TotalStage)
+        if(CurrentStage >= TotalStage&& bIsStageClear)
         {
-            PauseMng.PauseAll();
             GameClearButton.gameObject.SetActive(true);
         }
     }
@@ -120,7 +120,7 @@ public class GameManager : MonoBehaviour, IPauseable
     {
         bIsStageClear = false;
 
-        if (CurrentStage == TotalStage)
+        if (CurrentStage == TotalStage-1)
         {
             Instantiate(BossMonsterObj, MonsterSpawnPoints[0].transform).GetComponent<MonsterFSM>().SetMonster(true);
         }

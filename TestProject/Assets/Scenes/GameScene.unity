@@ -2913,7 +2913,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 236713742}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -3348,7 +3348,7 @@ GameObject:
   - component: {fileID: 262656739}
   - component: {fileID: 262656741}
   m_Layer: 0
-  m_Name: GuardianHP_Text (1)
+  m_Name: GameOver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3511,6 +3511,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1559526595}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 557269871}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6266,7 +6278,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 557269867}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -10331,7 +10343,7 @@ GameObject:
   - component: {fileID: 1023170157}
   - component: {fileID: 1023170156}
   m_Layer: 0
-  m_Name: GuardianHP_Text (1)
+  m_Name: GameClear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10395,6 +10407,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2117899626}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 236713744}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12829,7 +12853,7 @@ Transform:
   m_GameObject: {fileID: 1202857335}
   serializedVersion: 2
   m_LocalRotation: {x: 0.22975287, y: 0, z: 0, w: 0.973249}
-  m_LocalPosition: {x: 0, y: 4.5, z: -10}
+  m_LocalPosition: {x: 0, y: 4.5, z: -19.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12893,7 +12917,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 543450653221658901}
   offset: {x: 0, y: 5, z: -10}
-  smoothSpeed: 0.125
+  smoothSpeed: 5
 --- !u!4 &1207342518 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9bccb25500b447946a2d113f3aa5c0f3, type: 3}
@@ -23377,6 +23401,10 @@ PrefabInstance:
       propertyPath: joystick
       value: 
       objectReference: {fileID: 946799348}
+    - target: {fileID: 1628952021969581211, guid: 47d2bd5278a31af4ebb5e41d10f767fd, type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3784624994410351735, guid: 47d2bd5278a31af4ebb5e41d10f767fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -23387,7 +23415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3784624994410351735, guid: 47d2bd5278a31af4ebb5e41d10f767fd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.91
+      value: -14.05
       objectReference: {fileID: 0}
     - target: {fileID: 3784624994410351735, guid: 47d2bd5278a31af4ebb5e41d10f767fd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -23456,11 +23484,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7114477086678716712, guid: f9eb2b9e0582ccc47a3bef6fde0a4308, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.05
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8829425732327635112, guid: f9eb2b9e0582ccc47a3bef6fde0a4308, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.38
+      value: -0.43
       objectReference: {fileID: 0}
     - target: {fileID: 8829425732327635112, guid: f9eb2b9e0582ccc47a3bef6fde0a4308, type: 3}
       propertyPath: m_LocalPosition.y

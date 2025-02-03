@@ -13,7 +13,7 @@ public class GuardianObj : MonoBehaviour
 
     private void Start()
     {
-        FullHP = 11100;
+        FullHP = 500;
         CurrentHP = FullHP;
     }
 

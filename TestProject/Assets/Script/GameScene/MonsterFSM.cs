@@ -275,10 +275,8 @@ public class MonsterFSM : MonoBehaviour, IPauseable
         currentState.Enter();
     }
 
-    // 순찰 시작 메서드 (예시)
     public void StartChase()
     {
-        // 순찰 로직 구현
         MonsterAnim.SetBool("Move", true);
 
         agent.SetDestination(TargetTrans.position);
@@ -375,6 +373,9 @@ public class MonsterFSM : MonoBehaviour, IPauseable
     public void OnPause()
     {
         isPaused = true;
+        if (bIsDead)
+            return;
+
         MonsterAnim.enabled = false;
         agent.enabled = false;
         ChangeState(MonsterState.Idle);
