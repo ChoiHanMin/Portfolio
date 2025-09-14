@@ -17,7 +17,7 @@ EBTNodeResult::Type UBTTask_SetMosterState::ExecuteTask(UBehaviorTreeComponent& 
 
 		OwnerComp.GetBlackboardComponent()->SetValueAsEnum(GetSelectedBlackboardKey(), (uint8)NewMonsterState);
 
-		UE_LOG(LogTemp, Warning, TEXT("Monster State : %s"), *UEnum::GetValueAsString(NewMonsterState));
+		//UE_LOG(LogTemp, Warning, TEXT("Monster State : %s"), *UEnum::GetValueAsString(NewMonsterState));
 
 		return EBTNodeResult::Succeeded;
 	}

@@ -4,9 +4,12 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-//#include "Ingame/MeshMergeFunctionLibrary.h"
+//#include "AbilitySystemInterface.h"
+//#include "AbilitySystemComponent.h"
+#include "Character/PlayerAttributeSet.h"
 #include "Ingame/Item/MasterItem.h"
 #include "PortfolioCharacter.generated.h"
+
 
 UENUM(BlueprintType)
 enum class ECharacterState : uint8
@@ -39,7 +42,17 @@ class APortfolioCharacter : public ACharacter
 
 public:
 	APortfolioCharacter();
-	
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	UAbilitySystemComponent* AbilitySystemComponent;
+
+	UAbilitySystemComponent* GetAbilitySystemComponent();
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void PlayerHPChanged(float ChangeValue, const FGameplayTagContainer& InTags);
+
+	void HandleHPChanged(const FOnAttributeChangeData& Data);
+
 	void SetWeponColision(bool bIsOn);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -50,7 +63,7 @@ public:
 
 	//UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Character, meta = (AllowPrivateAccess = "true"))
 	//FSkeletalMeshMergeParams defaultMeshParams;
-	
+
 	virtual void BeginPlay() override;
 	// Called every frame.
 	virtual void Tick(float DeltaSeconds) override;
@@ -60,18 +73,17 @@ public:
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Info")
-	float CurrentHP;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Info")
-	float MaxHP = 100.0f;
-
 	bool IsDead();
 
+	void CharacterDamaged();
+	void CharacterHealed();
+	void Respawn();
+
+	float GetCurrentHP();
 	AMasterItem* NearItem;
 private:
 
-	bool bIsDead=false;
+	bool bIsDead = false;
 	TArray<FString> MeshPaths =
 	{
 		TEXT("/Script/Engine.SkeletalMesh'/Game/ModularRPGHeroesPolyart/Meshes/ModularBodyParts/Hair02SK.Hair02SK'"),
@@ -109,11 +121,11 @@ private:
 	class UBoxComponent* ShieldCollision;
 
 
-	
+
 	void SetWeaponMesh();
 
 	UFUNCTION()
-	void WeaponAttack(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep,const FHitResult& SweepResult);
+	void WeaponAttack(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
 	float TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser);
 
@@ -121,5 +133,6 @@ private:
 	//class USkeletalMeshComponent* MergedSkeletalMeshComponent;
 
 	//USkeletalMesh* MergeSkeletalMeshes(const TArray<USkeletalMesh*>& MeshesToMerge, USkeleton* Skeleton);
+
 };
 

@@ -3,6 +3,8 @@
 
 #include "Character/CharacterWidget.h"
 #include "Components/Button.h"
+#include "Components/TextBlock.h"
+#include "Components/ProgressBar.h"
 #include "Components/CanvasPanel.h"
 #include "Ingame/InGamePlayerController.h"
 #include "Kismet/GameplayStatics.h"
@@ -12,6 +14,9 @@ void UCharacterWidget::NativeConstruct()
 	Super::NativeConstruct();
 	CharWidgetCanvas = Cast<UCanvasPanel>(GetWidgetFromName(TEXT("CharWidgetCanvas")));
 	AttackButton = Cast<UButton>(GetWidgetFromName(TEXT("AttackButton")));
+	HPProgressBar = Cast<UProgressBar>(GetWidgetFromName(TEXT("HPBar_Sec")));
+	HPText = Cast<UTextBlock>(GetWidgetFromName(TEXT("HPText")));
+
 	if (AttackButton)
 	{
 		AttackButton->OnClicked.AddDynamic(this, &UCharacterWidget::Attack);
@@ -41,7 +46,14 @@ void UCharacterWidget::GetItem()
 	}
 }
 
-void UCharacterWidget::SetPercent(float NewPercent)
+void UCharacterWidget::SetHPPercent(float CurrentHP, float MaxHP)
 {
-	Percent = NewPercent;
+	if (HPProgressBar)
+	{
+		HPProgressBar->SetPercent(CurrentHP / MaxHP);
+	}
+	if (HPText)
+	{
+		HPText->SetText(FText::FromString(FString::Printf(TEXT("%d / %d"), FMath::RoundToInt(CurrentHP), FMath::RoundToInt(MaxHP))));
+	}
 }

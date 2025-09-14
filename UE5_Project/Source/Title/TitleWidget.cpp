@@ -22,6 +22,11 @@ void UTitleWidget::NativeConstruct()
 void UTitleWidget::StartGame()
 {
 	// Get the GameInstance
+	//ATitlePC* PC = Cast<ATitlePC>(UGameplayStatics::GetPlayerController(GetWorld(), 0));
+	//if (PC)
+	//{
+	//	PC->VisibleLoadingWidget();
+	//}
 	UPlayableGameInstance* GameInstance = Cast<UPlayableGameInstance>(GetGameInstance());
 	if (GameInstance)
 	{

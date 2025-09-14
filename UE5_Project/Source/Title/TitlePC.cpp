@@ -38,3 +38,9 @@ void ATitlePC::VisibleLoadingWidget()
 		LoadingWidget->PlayLoading();
 	}
 }
+
+//void ATitlePC::CloseWidget()
+//{
+//	if(TitleWidget)
+//		TitleWidget->SetVisibility(ESlateVisibility::Collapsed);
+//}

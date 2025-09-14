@@ -18,6 +18,7 @@
 #include "IngameWidget.h"
 #include "Title/LoadingWidget.h"
 #include "Components/Button.h"
+#include "Ingame/InGamePlayerState.h"
 #include "Kismet/GameplayStatics.h"
 
 DEFINE_LOG_CATEGORY(LogIngameCharacter);
@@ -28,9 +29,9 @@ AInGamePlayerController::AInGamePlayerController()
 	DefaultMouseCursor = EMouseCursor::Default;
 	CachedDestination = FVector::ZeroVector;
 	FollowTime = 0.f;
+
+	DamageGE = UMyIngameGE::StaticClass();
 }
-
-
 
 void AInGamePlayerController::SetupInputComponent()
 {
@@ -82,17 +83,7 @@ void AInGamePlayerController::BeginPlay()
 		IngameWidget->AddToViewport();
 	}
 
-	//FStringClassReference LoadingWidgetClassRef(TEXT("/Script/UMGEditor.WidgetBlueprint'/Game/Title/LoadingWidget_BP.LoadingWidget_BP_C'"));
-	//if (UClass* MyLoadingWidgetClass = LoadingWidgetClassRef.TryLoadClass<UUserWidget>())
-	//{
-	//	UE_LOG(LogTemp, Warning, TEXT("Loading Widget On Loading Widget On Loading Widget On Loading Widget On"));
-	//	LoadingWidget = Cast<ULoadingWidget>(NewObject<UUserWidget>(this, MyLoadingWidgetClass));
-	//	LoadingWidget->AddToViewport();
-	//	LoadingWidget->SetVisibility(ESlateVisibility::Visible);
-	//	LoadingWidget->PlayIngame();
-	//}
-
-	OnDamage.BindUObject(this, &AInGamePlayerController::SetWidgetPercent);
+	OnDamage.BindUObject(this, &AInGamePlayerController::SetWidgetHPPercent);
 	//Add Input Mapping Context
 	if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(GetLocalPlayer()))
 	{
@@ -101,14 +92,13 @@ void AInGamePlayerController::BeginPlay()
 
 	SetInputMode(FInputModeGameAndUI());
 
-	//LoadingEnd();
 }
 
-void AInGamePlayerController::SetWidgetPercent(float NewPercent)
+void AInGamePlayerController::SetWidgetHPPercent(float CurrentHP, float MaxHP)
 {
 	if (IngameWidget != nullptr)
 	{
-		IngameWidget->CharacterWidget->Percent = NewPercent;
+		IngameWidget->CharacterWidget->SetHPPercent(CurrentHP,MaxHP);
 	}
 }
 
@@ -175,12 +165,14 @@ void AInGamePlayerController::MoveController(const FInputActionValue& Value)
 
 void AInGamePlayerController::OnAttack()
 {
-	UE_LOG(LogTemp, Warning, TEXT("Attack"));
+	
 
 	APortfolioCharacter* ControlledPawn = Cast<APortfolioCharacter>(GetPawn());
 
 	if (ControlledPawn->CurrentState == ECharacterState::Normal)
 	{
+		UE_LOG(LogTemp, Warning, TEXT("Attack"));
+
 		ControlledPawn->SetWeponColision(true);
 		StartCombo();
 		return;
@@ -188,6 +180,7 @@ void AInGamePlayerController::OnAttack()
 
 	if (ControlledPawn->CurrentState == ECharacterState::Battle)
 	{
+		UE_LOG(LogTemp, Warning, TEXT("Combo"));
 		ContinueCombo();
 		return;
 	}
@@ -197,21 +190,37 @@ void AInGamePlayerController::OnAttack()
 void AInGamePlayerController::SetItemGet()
 {
 	APortfolioCharacter* ControlledPawn = Cast<APortfolioCharacter>(GetPawn());
+	AInGamePlayerState* PS = GetPlayerState<AInGamePlayerState>();
+	
+	//ASC °¡Á®¿À±â
+	auto ASC = PS->GetAbilitySystemComponent();
+	if (!ASC) return;
+
+	float CurrentHP = ASC->GetNumericAttribute(PS->AttributeSet->GetCurrentHPAttribute());
+	float MaxHP = ASC->GetNumericAttribute(PS->AttributeSet->GetMaxHPAttribute());
+
 	if (ControlledPawn->NearItem)
 	{
-		if (ControlledPawn->CurrentHP < ControlledPawn->MaxHP)
+		if (CurrentHP < MaxHP)
 		{
+			//HPÈ¸º¹
+			float HealValue = ControlledPawn->NearItem->Data->ItemFloat01;
 
-			ControlledPawn->CurrentHP += ControlledPawn->NearItem->Data->ItemFloat01;
-			if (ControlledPawn->CurrentHP > ControlledPawn->MaxHP)
-			{
-				ControlledPawn->CurrentHP = ControlledPawn->MaxHP;
-			}
+			FGameplayEffectContextHandle Context = ASC->MakeEffectContext();
+			FGameplayEffectSpecHandle SpecHandle = ASC->MakeOutgoingSpec(DamageGE, 1.0f, Context);
+			if (!SpecHandle.IsValid()) return;
+			
+			// µ¥¹ÌÁö¹Þ´Â °ÔÀÓ ÀÌÆåÆ®¸¦ Èú·®À¸·Î º¯°æÇØ¼­ Àû¿ë
+			SpecHandle.Data->SetSetByCallerMagnitude(FGameplayTag::RequestGameplayTag(FName("Data.Heal")), HealValue);
+
+			// ASC¿¡ Àû¿ë (ÀÚ±â ÀÚ½Å¿¡°Ô Àû¿ë)
+			ASC->ApplyGameplayEffectSpecToSelf(*SpecHandle.Data.Get());
+
 			ControlledPawn->NearItem->Destroy();
-			OnDamage.ExecuteIfBound(ControlledPawn->CurrentHP / ControlledPawn->MaxHP);
 		}
-		else if (ControlledPawn->CurrentHP >= ControlledPawn->MaxHP)
+		else if (CurrentHP >= MaxHP)
 		{
+			//HP°¡ °¡µæ Ã¡´Ù´Â ¾Ö´Ï¸ÞÀÌ¼Ç Àç»ý
 			IngameWidget->PlayHPFullNotiAnim();
 		}
 		UE_LOG(LogTemp, Warning, TEXT("Item Near"));
@@ -250,7 +259,6 @@ void AInGamePlayerController::StartCombo()
 
 	UE_LOG(LogTemp, Warning, TEXT("Executing Combo %d"), CurrentComboCount);
 
-	// ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½: ï¿½ï¿½Å¸ï¿½ï¿½ ï¿½ï¿½ï¿½)
 	APortfolioCharacter* ControlledPawn = Cast<APortfolioCharacter>(GetPawn());
 	if (ControlledPawn != nullptr)
 	{
@@ -273,7 +281,6 @@ void AInGamePlayerController::ContinueCombo()
 
 		UE_LOG(LogTemp, Warning, TEXT("Executing Combo %d"), CurrentComboCount);
 
-		// ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½: ï¿½ï¿½Å¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
 		APortfolioCharacter* ControlledPawn = Cast<APortfolioCharacter>(GetPawn());
 		if (ControlledPawn != nullptr)
 		{

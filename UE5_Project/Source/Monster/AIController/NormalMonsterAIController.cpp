@@ -18,7 +18,7 @@ void ANormalMonsterAIController::OnPossess(APawn* InPawn)
 {
 	Super::OnPossess(InPawn);
 	ANormalMonster* NormalMonster = Cast<ANormalMonster>(InPawn);
-
+	
 	if (NormalMonster)
 	{
 		BBComponent->InitializeBlackboard(*(NormalMonster->BehaviorTree->BlackboardAsset));

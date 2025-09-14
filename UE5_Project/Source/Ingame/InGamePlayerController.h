@@ -6,6 +6,7 @@
 #include "Templates/SubclassOf.h"
 #include "GameFramework/PlayerController.h"
 #include "Ingame/PortfolioCharacter.h"
+#include "Character/MyIngameGE.h"
 #include "InGamePlayerController.generated.h"
 
 /** Forward declaration to improve compiling times */
@@ -15,7 +16,8 @@ class UInputAction;
 struct FInputActionValue;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogIngameCharacter, Log, All);
-DECLARE_DELEGATE_OneParam(FDamageDelegate, float);
+//DECLARE_DELEGATE_OneParam(FDamageDelegate, float);
+DECLARE_DELEGATE_TwoParams(FDamageDelegate, float,float);
 
 UCLASS()
 class PORTFOLIO_API AInGamePlayerController : public APlayerController
@@ -59,11 +61,13 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* SetItemGetInput;
 
-	class UIngameWidget* IngameWidget;
 	class UCharacterWidget* CharacterWidget;
+	class UIngameWidget* IngameWidget;
 	class ULoadingWidget* LoadingWidget;
 
-	void SetWidgetPercent(float NewPercent);
+	UFUNCTION(BlueprintCallable, Category = "UI")
+	void SetWidgetHPPercent(float CurrentHP, float MaxHP);
+
 	FDamageDelegate OnDamage;
 
 	void OnAttack();
@@ -71,6 +75,9 @@ public:
 	void LoadingEnd();
 	void ChracterDead();
 	void ClearGame();
+
+	UPROPERTY(EditDefaultsOnly, Category = "GAS")
+	TSubclassOf<UMyIngameGE> DamageGE;
 protected:
 	/** True if the controlled character should navigate to the mouse cursor. */
 	uint32 bMoveToMouseCursor : 1;

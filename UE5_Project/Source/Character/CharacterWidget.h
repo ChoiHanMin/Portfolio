@@ -24,6 +24,12 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	class UButton* GetButton;
 
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	class UTextBlock* HPText;
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	class UProgressBar* HPProgressBar;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	class UCanvasPanel* CharWidgetCanvas;
 
@@ -33,7 +39,8 @@ public:
 	UFUNCTION()
 	void GetItem();
 
-	void SetPercent(float NewPercent);
+	UFUNCTION(BlueprintCallable)
+	void SetHPPercent(float CurrentHP, float MaxHP);
 
 	//UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	//class UTextBlock* Name;

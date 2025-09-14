@@ -47,17 +47,16 @@ void UPlayableGameInstance::BGMFadeIn(float StartTime, USoundBase* BGM)
 	{
 		Volume = 1.0f;
 	}
-
+	
 	UWorld* World = GetWorld();
 	BGMComponent = UGameplayStatics::CreateSound2D(World, BGM, Volume, 1.0f, 0.0f, nullptr, true);
 	BGMComponent->FadeIn(BGMFadeDuration, Volume, StartTime, EAudioFaderCurve::Linear);
-
+	
 	BGMComponent->Play();
 }
 
 void UPlayableGameInstance::BGMFadeOut()
 {
-
 	if (BGMComponent)
 	{
 		UE_LOG(LogTemp, Warning, TEXT("BGM FadeOut"));

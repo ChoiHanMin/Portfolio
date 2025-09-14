@@ -27,15 +27,18 @@ void UCheckState::TickNode(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory,
 
 			float Range = FVector::Distance(Monster->GetActorLocation(), Player->GetActorLocation());
 			FVector Dir = Player->GetActorLocation() - Monster->GetActorLocation();
+			//플레이어 바라보기
 			Monster->SetActorRotation(Dir.Rotation());
 
+			//공격 범위보다 멀어지면 Chase 상태로 전환
 			if (Range > Monster->AttackRange)
 			{
 				Monster->CurrentState = ENormalMonsterState::Chase;
 				Monster->CurrentAnimState = ENormalMonsterAnimState::Run;
 				OwnerComp.GetBlackboardComponent()->SetValueAsEnum("CurrentState", (uint8)Monster->CurrentState);
 			}
-			else if (Player->CurrentHP <= 0)
+			//플레이어가 죽으면 Normal 상태로 전환
+			else if (Player->GetCurrentHP() <= 0)
 			{
 				Monster->CurrentState = ENormalMonsterState::Normal;
 				Monster->CurrentAnimState = ENormalMonsterAnimState::Idle;
@@ -47,7 +50,15 @@ void UCheckState::TickNode(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory,
 
 		case ENormalMonsterState::Chase:
 		{
-			Monster->SetAttackColision(false);
+
+			if (Monster->CurrentHP <= 0 && Monster->CurrentState != ENormalMonsterState::Dead)
+			{
+				Monster->CurrentState = ENormalMonsterState::Dead;
+				Monster->CurrentAnimState = ENormalMonsterAnimState::Death;
+				OwnerComp.GetBlackboardComponent()->SetValueAsEnum("CurrentState", (uint8)Monster->CurrentState);
+				return;
+			}
+
 			AActor* Player = Cast<AActor>(OwnerComp.GetBlackboardComponent()->GetValueAsObject(FName(TEXT("Target"))));
 			if (Player == nullptr)
 			{
@@ -59,6 +70,7 @@ void UCheckState::TickNode(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory,
 
 			float Range = FVector::Distance(Monster->GetActorLocation(), Player->GetActorLocation());
 
+			// 범위 안에 있으면 공격
 			if (Range <= Monster->AttackRange)
 			{
 				Monster->CurrentState = ENormalMonsterState::Battle;
@@ -66,6 +78,7 @@ void UCheckState::TickNode(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory,
 				
 				OwnerComp.GetBlackboardComponent()->SetValueAsEnum(FName(TEXT("CurrentState")), (uint8)Monster->CurrentState);
 			}
+			// 볼 수 있는 범위를 벗어나면 Normal 상태로 전환
 			else if (Range > Monster->PawnSensing->SightRadius)
 			{
 				Monster->CurrentState = ENormalMonsterState::Normal;

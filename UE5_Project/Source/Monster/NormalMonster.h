@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Ingame/Item/MasterItem.h"
+#include "Character/MyIngameGE.h"
 #include "NormalMonster.generated.h"
 
 UENUM(BlueprintType)
@@ -69,6 +70,9 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	UPROPERTY(EditDefaultsOnly, Category = "GAS")
+	TSubclassOf<UMyIngameGE> DamageGE;
+
 	UFUNCTION()
 	void OnSeePawn(APawn* Pawn);
 
@@ -103,7 +107,7 @@ public:
 	class UPawnSensingComponent* PawnSensing;
 
 	UFUNCTION()
-	void NormalAttack(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+	void NormalAttack(AActor* Attacker, AActor* TargetActor, float DamageAmount);
 
 	void SetAttackColision(bool bIsOn);
 
